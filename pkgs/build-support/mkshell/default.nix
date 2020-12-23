@@ -1,4 +1,4 @@
-{ lib, stdenv }:
+{ lib, stdenvNoCC }:
 
 # A special kind of derivation that is only meant to be consumed by the
 # nix-shell.
@@ -24,7 +24,7 @@ let
   ];
 in
 
-stdenv.mkDerivation ({
+stdenvNoCC.mkDerivation ({
   name = "nix-shell";
   phases = ["nobuildPhase"];
 
